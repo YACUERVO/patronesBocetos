@@ -1,0 +1,213 @@
+/* Variables */
+:root{
+    /* colores primarios */
+    --paleBlue: hsl(225,100%,94%);
+    --brightBlue:hsl(245,75%,52%);
+
+    /* colores secundarios */
+    --veryPaleBlue:hsl(225,100%,98%);
+    --desaturatedBlue:hsl(224,23%,55%);
+    --darkBlue:hsl(223,47%,23%);
+    --blanco:#fff;
+
+    /* topografia */
+    --fuentePrimaria:'Red Hat Display',sans-serif;
+
+}
+
+/* globales */
+html {
+    box-sizing: border-box;
+    /* para que el padding no afecta el ancho de los elementos  */
+    font-size: 62.5%;
+    /* 1 rem = 10 px */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuentePrimaria);
+    font-size: 1.6rem;
+    line-height: 2;
+    /* interlineado */
+    background-color: var(--paleBlue);    
+
+}
+
+.contenedor {
+    max-width: 80rem;
+    width: 90%;
+    width: min(90%, 120rem);
+    /* width: min(90%, 120rem); equibale a tener max-width y width. Este contenedor permite que sea reponsive en dispositivos moviles y pc, debido que se va ajustando de acuerdo a la cantidad de pixeles que tiene la pantalla; */
+    margin: 0 auto;
+    background-color: var(--blanco);
+    margin: 2rem;
+    padding-bottom: 2rem;    
+    border-radius: 1.5rem;
+    /* sombras del contenedor */
+    box-shadow: 3px 3px 3px hsl(228,45%,44%, 015);
+    
+}
+.imagen_hero img{
+    width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuentePrimaria);
+    line-height: 1.2;
+    /* line-height:1.2; interlineado entre paragrafos */
+}
+p{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: var(--desaturatedBlue);
+    margin: 2rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+    color: var(--darkBlue);
+    margin: 1rem 0;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+    color: var(--darkBlue);
+}
+
+h4 {
+    font-size: 2rem;
+    margin: 0.5rem 0 0 0;
+    color: var(--desaturatedBlue);
+}
+
+img {     
+    max-width: 100%;       
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.centrar_texto {
+    text-align: center;
+}
+
+/* Imagen de fondo */
+.header{
+    background-image: url(../images/pattern-background-mobile.svg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+    min-height: 50rem;
+}
+
+/* botones */
+button{
+    font-family: var(--fuentePrimaria);
+    
+}
+.boton{
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.boton_cambio{   
+    background-color: transparent;
+    color: var(--brightBlue);
+    /* decoracion texto con linea inferior */
+    text-decoration: underline;    
+}
+.boton_procesar{
+    background-color: var(--brightBlue);
+    color: var(--blanco);
+    text-decoration: none;  
+    margin: 3rem auto;
+    width: 90%;
+    padding: 1rem;
+    
+    
+}
+.boton_procesar:hover,.boton_cambio:hover {
+    /* cambio de color al poner el cursor en el boton */
+    opacity: 0.8;
+
+}
+.boton_cancelar{
+    background-color: transparent;
+    color: var(--desaturatedBlue);
+}
+.boton_cancelar:hover{
+    /* cambio de color cuando pongo el cursor */
+    color:hsl(223,47%,23%);
+}
+.botones{
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    row-gap: 1rem;
+   
+}
+@media (min-width: 768px) {
+    .header{
+        background-image:url(../images/pattern-background-desktop.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height:50vh;
+        width: 100%;
+    }
+    .contenedor{
+        width: 65rem;
+    }
+}
+
+/* contenido precio plan */
+.contenido {
+    background-color: var(--veryPaleBlue);    
+    margin: 3rem auto;
+    max-width: 90%;
+    border-radius: 2rem;
+    max-height: 90%;
+}
+.contenido_plan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;       
+    margin: 0.5rem;
+    padding: 1rem;
+
+}
+.imagen_plan{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 2rem;
+    align-items: center;
+}
+.icono img{    
+    width: 50%;
+    padding-top:1rem;    
+}
